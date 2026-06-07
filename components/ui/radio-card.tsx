@@ -38,7 +38,7 @@ function RadioCard({
         selected
           ? 'border-focus-border bg-brand-primary-bg'
           : 'border-strong-border bg-default-bg hover:bg-subtle-bg',
-        className,
+        className
       )}
     >
       {icon && (
@@ -48,24 +48,25 @@ function RadioCard({
       )}
 
       <span className="flex-1 min-w-0">
-        <span className={cn('block text-sm font-semibold', selected ? 'text-brand-text' : 'text-primary-text')}>
+        <span
+          className={cn(
+            'block text-sm font-semibold',
+            selected ? 'text-brand-text' : 'text-primary-text'
+          )}
+        >
           {title}
         </span>
-        {description && (
-          <span className="block text-xs text-muted-text mt-0.5">{description}</span>
-        )}
+        {description && <span className="block text-xs text-muted-text mt-0.5">{description}</span>}
       </span>
 
       {/* Radio indicator */}
       <span
         className={cn(
           'h-5 w-5 shrink-0 rounded-full border-2 flex items-center justify-center',
-          selected ? 'border-brand-primary-fg' : 'border-strong-border',
+          selected ? 'border-brand-primary-fg' : 'border-strong-border'
         )}
       >
-        {selected && (
-          <span className="h-2.5 w-2.5 rounded-full bg-brand-primary-fg" />
-        )}
+        {selected && <span className="h-2.5 w-2.5 rounded-full bg-brand-primary-fg" />}
       </span>
     </button>
   );
