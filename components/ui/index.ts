@@ -13,6 +13,18 @@ export { OtpInput } from './otp-input';
 export { RadioCard } from './radio-card';
 
 export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from './dialog';
+
+export {
   Form,
   FormField,
   FormItem,

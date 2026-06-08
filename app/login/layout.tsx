@@ -4,7 +4,7 @@ import { TextStyle } from '@/components/typography';
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="h-screen relative">
-      <Image src="background.svg" alt="Background" fill className="inset-0 object-cover -z-10" />
+      <Image src="/background.svg" alt="Background" fill className="inset-0 object-cover -z-10" />
       <div className="p-12 max-w-354 mx-auto flex items-center justify-center h-screen relative">
         <div className="w-[50%] h-[90vh] relative">
           <header className="flex flex-col gap-2 mb-8">
@@ -15,7 +15,7 @@ export default function LoginLayout({ children }: { children: React.ReactNode })
             </TextStyle>
           </header>
           <Image
-            src="login-layout-illustrator.svg"
+            src="/login-layout-illustrator.svg"
             className="absolute bottom-0 left-0"
             alt="Login Background"
             width={600}
