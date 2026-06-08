@@ -28,7 +28,7 @@ function maskEmail(email: string) {
 
 export default function SuccessPage() {
   const router = useRouter();
-  const { data, reset } = useUserRegistrationStore();
+  const { data } = useUserRegistrationStore();
 
   const displayName = [data.firstName, data.lastName].filter(Boolean).join(' ') || '—';
   const displayEmail = data.email ? maskEmail(data.email) : '—';
@@ -38,7 +38,6 @@ export default function SuccessPage() {
     : '—';
 
   function handleDashboard() {
-    reset();
     router.push('/dashboard');
   }
 
@@ -48,10 +47,12 @@ export default function SuccessPage() {
 
       {/* Success card */}
       <div className="flex flex-col flex-1 items-center justify-center gap-8">
-        <div className={cn(
-          'flex flex-col items-center gap-3 w-full rounded-2xl border border-primary-border p-8',
-          'bg-default-bg shadow-sm',
-        )}>
+        <div
+          className={cn(
+            'flex flex-col items-center gap-3 w-full rounded-2xl border border-primary-border p-8',
+            'bg-default-bg shadow-sm'
+          )}
+        >
           {/* Icon */}
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-success-bg border border-success-border text-success-fg">
             <CircleCheck size={28} />
