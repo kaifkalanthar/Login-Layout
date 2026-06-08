@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/form';
 import { PasswordInput } from '@/components/ui/password-input';
 import { StepProgress } from '@/features/auth/components/StepProgress';
+import { createSession } from '@/features/auth/actions/session';
 import { useUserRegistrationStore } from '@/features/auth/hooks/useUserRegistrationStore';
 import {
   passwordSchema,
@@ -105,7 +106,14 @@ export default function PasswordPage() {
     setOpen(true);
   }
 
-  function handleDashboard() {
+  async function handleDashboard() {
+    await createSession({
+      accountType: data.accountType,
+      mobile: data.mobile,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+    });
     reset();
     router.push('/dashboard');
   }
